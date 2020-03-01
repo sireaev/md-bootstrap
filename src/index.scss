@@ -10,3 +10,9 @@ $fa-font-path: "~font-awesome/fonts";
 @import './components/read-more-less';
 @import './components/layout';
 @import './components/footer/footer';
+
+// Local fonts declaration example
+@font-face {
+    font-family: 'Raleway Regular';
+    src: url('assets/fonts/raleway-regular.ttf') format('truetype');
+}

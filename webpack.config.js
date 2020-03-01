@@ -17,12 +17,12 @@ module.exports = (env, argv) => {
   return {
     entry: [
       path.resolve(__dirname, 'src/index.js'),
-      path.resolve(__dirname, 'src/main.scss'),
+      path.resolve(__dirname, 'src/index.scss'),
       path.resolve(__dirname, 'node_modules/mdbootstrap/scss/mdb-free.scss'),
     ],
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: 'bundle.js',
+      filename: 'bundle.js'
     },
     mode: argv.mode,
     module: {
@@ -75,6 +75,8 @@ module.exports = (env, argv) => {
           test: /\.(jpe?g|png|gif)$/,
           loader: 'file-loader',
           options: {
+            // esModule: false,
+            name: 'src/assets/images/[name].[ext]',
             outputPath: 'assets/',
           },
         },
