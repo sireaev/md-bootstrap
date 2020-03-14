@@ -1,0 +1,13 @@
+// FontAwesome 4.7.x
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome.scss";
+
+// Bootstrap 4
+@import "~bootstrap/scss/bootstrap";
+
+@import './components/header/header';
+@import './components/animated-section';
+@import './components/read-more-less';
+@import './components/layout';
+@import './components/footer/footer';
+@import './components/main/main';
