@@ -18,7 +18,6 @@ module.exports = (env, argv) => {
     entry: [
       path.resolve(__dirname, 'src/index.js'),
       path.resolve(__dirname, 'src/index.scss'),
-      path.resolve(__dirname, 'src/components/contactus/contactus.js'),
       path.resolve(__dirname, 'node_modules/mdbootstrap/scss/mdb-free.scss'),
     ],
     output: {
@@ -91,7 +90,11 @@ module.exports = (env, argv) => {
           loader: 'handlebars-loader',
           options: {
             name: '[name].[ext]',
-            useRelativePath: true
+            useRelativePath: true,
+            helperDirs: [path.resolve(__dirname, "src/modules")],
+            precompileOptions: {
+              knownHelpersOnly: false,
+          },
           },
         },
       ],
@@ -106,14 +109,16 @@ module.exports = (env, argv) => {
         template: 'src/components/products/products.html',
         inject: 'body',
         filename: 'products',
+      }),
+      new HtmlWebPackPlugin({
         template: 'src/components/contactus/contactus.html',
         inject: 'body',
         filename: 'contactus',
       }),
       new HtmlWebPackPlugin({
-        template: 'src/components/products-details/products-detail.html',
+        template: 'src/components/product-details/product-details.html',
         inject: 'body',
-        filename: 'products-details',
+        filename: 'product-details',
       }),
       new webpack.ProvidePlugin({
         $: 'jquery',

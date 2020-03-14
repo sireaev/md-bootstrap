@@ -1,0 +1,13 @@
+{{#each items}}
+<tr>
+    {{#each this}}
+    <td>
+        {{#ifEquals this "view"}}{{/ifEquals}}
+
+        {{#ifNotEquals this "view"}}
+            {{this}}
+        {{/ifNotEquals}}
+    </td>
+    {{/each}}
+</tr>
+{{/each}}

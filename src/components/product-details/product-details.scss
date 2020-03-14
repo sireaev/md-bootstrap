@@ -1,0 +1,11 @@
+.product-details-page {
+    .header-text {}
+    .badges {}
+    .price {
+        color: red;
+        font-size: 25px;
+        .text-muted {
+            text-decoration: line-through;
+        }
+    }
+}

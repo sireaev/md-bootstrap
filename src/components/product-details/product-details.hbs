@@ -1,0 +1,34 @@
+<div class="col product-details-page">
+    <div class="row">
+        <div class="col-6">TODO: SLIDER</div>
+        <div class="col-6">
+            <div class="header-text row">
+                <div class="col">
+                    <h4>{{product.name}}</h4>
+                </div>
+            </div>            
+            <div class="badges row">
+                <div class="col">
+                <span class="badge badge-pill badge-default">bestseller</span>
+                <span class="badge badge-pill badge-danger">SALE</span>
+                </div>
+            </div>
+            <div class="price row mt-2">
+                <div class="col">
+                <span class="d-inline-block">{{product.price}} $</span>
+                <span class="d-inline-block text-muted">{{product.oldPrice}} $</span>
+                </div>
+            </div>
+            <div class="availability row mt-2">
+                <label for="" class="col-2">Availability:</label>
+                <div class="col-8">
+                    {{#if product.availability}}
+                    In stock
+                    {{else}}
+                    Not available
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
