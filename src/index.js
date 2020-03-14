@@ -18,3 +18,5 @@ import 'bootstrap';
 import './components/header/header';
 import './components/footer/footer';
 import './components/readMoreLess';
+import './components/main/main';
+import './components/contactus-form/contactus-form';

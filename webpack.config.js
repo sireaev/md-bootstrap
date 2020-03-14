@@ -18,11 +18,12 @@ module.exports = (env, argv) => {
     entry: [
       path.resolve(__dirname, 'src/index.js'),
       path.resolve(__dirname, 'src/index.scss'),
+      path.resolve(__dirname, 'src/components/contactus/contactus.js'),
       path.resolve(__dirname, 'node_modules/mdbootstrap/scss/mdb-free.scss'),
     ],
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: 'bundle.js'
+      filename: 'bundle.js',
     },
     mode: argv.mode,
     module: {
@@ -75,8 +76,6 @@ module.exports = (env, argv) => {
           test: /\.(jpe?g|png|gif)$/,
           loader: 'file-loader',
           options: {
-            // esModule: false,
-            name: 'src/assets/images/[name].[ext]',
             outputPath: 'assets/',
           },
         },
@@ -92,7 +91,7 @@ module.exports = (env, argv) => {
           loader: 'handlebars-loader',
           options: {
             name: '[name].[ext]',
-            useRelativePath: true,
+            useRelativePath: true
           },
         },
       ],
@@ -107,6 +106,14 @@ module.exports = (env, argv) => {
         template: 'src/components/products/products.html',
         inject: 'body',
         filename: 'products',
+        template: 'src/components/contactus/contactus.html',
+        inject: 'body',
+        filename: 'contactus',
+      }),
+      new HtmlWebPackPlugin({
+        template: 'src/components/products-details/products-detail.html',
+        inject: 'body',
+        filename: 'products-details',
       }),
       new webpack.ProvidePlugin({
         $: 'jquery',
