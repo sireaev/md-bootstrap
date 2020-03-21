@@ -7,6 +7,8 @@ const scope = {
   title: 'Contact US TEMPLATE',
 };
 
+const productPages = [{ name: 'Shirt' }, { name: 'Car' }, { name: 'Blouse' }, { name: 'Pants' }, { name: 'Gloves' }, { name: 'Underwear' }];
+
 const items = [
   ['Tiger Nixon', 'System Architect', 'Edinburgh', '5421', '2011-04-25', '$320,800'],
   ['Garrett Winters', 'Accountant', 'Tokyo', '8422', '2011-07-25', '$170,750'],
@@ -60,5 +62,7 @@ const links = {
 
 
 if (productsContainer) {
-  productsContainer.innerHTML = productsTemplate({ scope, items, links });
+  productsContainer.innerHTML = productsTemplate({
+    scope, items, links, productPages,
+  });
 }

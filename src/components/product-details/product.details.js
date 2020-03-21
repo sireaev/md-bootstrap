@@ -22,13 +22,20 @@ const product = {
     reviewText: 'Ideal, excellent seller!!! A++++',
   }],
 };
+
+function assignContainer() {
+  if (productDetailsContainer) {
+    productDetailsContainer.innerHTML = productDetailsTemplate({ scope, product });
+  }
+}
+
 $().ready(() => {
+  product.name = window.location.search.replace('?', '').replace('=', '').replace(/name/g, ' ');
   $('#moreButton').on('click', () => {
     $('.more').toggleClass('open');
     $('.dots').toggleClass('close');
   });
+  assignContainer();
 });
 
-if (productDetailsContainer) {
-  productDetailsContainer.innerHTML = productDetailsTemplate({ scope, product });
-}
+assignContainer();
