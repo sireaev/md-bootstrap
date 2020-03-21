@@ -18,6 +18,7 @@ module.exports = (env, argv) => {
     entry: [
       path.resolve(__dirname, 'src/index.js'),
       path.resolve(__dirname, 'src/index.scss'),
+      path.resolve(__dirname, 'src/assets/css/font-awesome.min.css'),
       path.resolve(__dirname, 'node_modules/mdbootstrap/scss/mdb-free.scss'),
     ],
     output: {

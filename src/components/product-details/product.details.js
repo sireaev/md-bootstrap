@@ -22,6 +22,12 @@ const product = {
     reviewText: 'Ideal, excellent seller!!! A++++',
   }],
 };
+$().ready(() => {
+  $('#moreButton').on('click', () => {
+    $('.more').toggleClass('open');
+    $('.dots').toggleClass('close');
+  });
+});
 
 if (productDetailsContainer) {
   productDetailsContainer.innerHTML = productDetailsTemplate({ scope, product });
